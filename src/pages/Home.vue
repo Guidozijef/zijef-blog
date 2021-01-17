@@ -1,7 +1,7 @@
 <template>
   <div class="home_post_list">
     <section class="home-post-section home-section">
-      <div class="home-section-header">Latest-Post</div>
+      
       <div class="post-list-wrapper home-section-wrapper">
         <PostList
           class="row1"
@@ -212,10 +212,11 @@ export default {
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
   margin-right: 1rem;
+  background: #fff;
 }
 .single-photo-parent img {
-  height: auto;
-  max-width: 100%;
+  /* height: auto; */
+  max-height: 120px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   border-top-right-radius: calc(0.25rem - 1px);
