@@ -22,5 +22,53 @@ let pageroutes = [
   {
     path: "/Tutorial/2020-12-07-SLEF",
     component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/LIFE/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/post/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/Tutorial/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/LIFE/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/post/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/Tutorial/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/LIFE/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/post/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/Tutorial/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/LIFE/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/post/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
+  },
+  {
+    path: "/Tutorial/2020-12-07-SLEF",
+    component: () => import('../posts/2020-12-07-SLEF.md')
   }];
 export default pageroutes;

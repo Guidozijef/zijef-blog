@@ -1,5 +1,6 @@
 <template>
-    <div :class="menuFixed ? 'boxShadow header' : 'header'">
+  <div :class="menuFixed ? 'boxShadow header-container' : 'header-container'">
+   <div class="header">
       <img src="../assets/img/title.png" alt="">
       <div class="menu_bar">
         <div class="menu_bar_list">
@@ -35,6 +36,8 @@
         </div>
       </div>
     </div>
+  </div>
+
 </template>
 
 
@@ -76,16 +79,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
-  height: 60px;
-  line-height: 60px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+.header-container{
   background: #fff;
-  font-weight: 700;
-  z-index: 9;
+  .header {
+    margin: 0 auto;
+    width: 1290px;
+    height: 60px;
+    line-height: 60px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    font-weight: 700;
+    z-index: 9;
+  }
 }
+
 .boxShadow{
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
@@ -93,7 +101,6 @@ export default {
 img{
   height: 60px;
   float: left;
-  margin-left: 100px;
 }
 .menu_bar{
   display: flex;
@@ -107,11 +114,11 @@ img{
     height: 60px;
     cursor: pointer;
     &:hover{
-      color: #007fff;
+      color: #2872FA;
     }
   }
   .active_menu_tags {
-    color: #007fff;
+    color: #2872FA;
   }
 }
 

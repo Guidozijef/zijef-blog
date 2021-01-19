@@ -1,7 +1,10 @@
 <template>
   <div class="home_post_list">
     <section class="home-post-section home-section">
-      
+      <div class="home-container">
+        <PageList/>
+        <div style="width:27%;background:red"></div>
+      </div>
       <div class="post-list-wrapper home-section-wrapper">
         <PostList
           class="row1"
@@ -89,7 +92,8 @@ export default {
     };
   },
   components: {
-    PostList: () => import("../components/PostList")
+    PostList: () => import("../components/PostList"),
+    PageList: () => import("../components/PageList")
   },
   methods: {
     handleRouter: function(dir, categorie = "") {
@@ -111,6 +115,10 @@ export default {
   width: 800px;
   margin: 0 auto;
   position: relative;
+}
+.home-container{
+  display: flex;
+  justify-content: space-between;
 }
 .home_post_list {
   display: flex;

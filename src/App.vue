@@ -126,9 +126,8 @@ export default {
   background: #f6f6f6;
 }
 .home-contanier{
-  width: 1000px;
-  margin: 0 auto;
-
+  width: 1290px;
+  margin: 60px auto 0px;
 }
 .avatar {
   height: 3rem;
