@@ -28,7 +28,27 @@ postWatcher.on('change', update)
 
 module.exports = {
 
-
+  // baseUrl: PUBLIC_PATH,
+  // assetsDir: 'static-new',
+  // lintOnSave: false,
+  // productionSourceMap: false,
+  devServer: {
+    historyApiFallback: true,
+    https: false,
+    hot: true,
+    host: '127.0.0.1',
+    port: 80,
+    disableHostCheck: true,
+    proxy: {
+      '/api/wallpaper/': {
+        target: 'http://wallpaper.apc.360.cn',
+        changeOrigin: true,
+        pathRewrite: {
+            '^/api/wallpaper': '/'
+        }
+      },
+    },
+  },
 
 
   chainWebpack: config => {

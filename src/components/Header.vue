@@ -1,7 +1,7 @@
 <template>
   <div :class="menuFixed ? 'boxShadow header-container' : 'header-container'">
    <div class="header">
-      <img src="../assets/img/title.png" alt="">
+      <!-- <img src="../assets/img/title.png" alt=""> -->
       <div class="menu_bar">
         <div class="menu_bar_list">
           <span
@@ -81,16 +81,16 @@ export default {
 <style lang="scss" scoped>
 .header-container{
   background: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 9;
+  top: 0;
   .header {
     margin: 0 auto;
     width: 1290px;
     height: 60px;
     line-height: 60px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
     font-weight: 700;
-    z-index: 9;
   }
 }
 

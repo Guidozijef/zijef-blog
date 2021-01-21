@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Message,Loading } from 'iview';
+import { Message,Spin } from 'iview';
 
 
 
@@ -15,9 +15,9 @@ let instance = axios.create({
 
 
 function request(url,params,options={loading:true,mock:false,error:true},method){
-  let loadingInstance;
+  // let loadingInstance;
   // 请求前loading
-  if(options.loading) loadingInstance = Loading.service();
+  if(options.loading) Spin.show();
   return new Promise((resolve,reject)=>{
       let data = {}
       // get请求使用params字段
@@ -34,7 +34,7 @@ function request(url,params,options={loading:true,mock:false,error:true},method)
           // 此处作用很大，可以扩展很多功能。
           // 比如对接多个后台，数据结构不一致，可做接口适配器
           // 也可对返回日期/金额/数字等统一做集中处理
-          if(res.status === 0){
+          if(res.status === 200){
               resolve(res.data);
           }else{
               // 通过配置可关闭错误提示
@@ -44,7 +44,7 @@ function request(url,params,options={loading:true,mock:false,error:true},method)
       }).catch((error)=>{
           Message.error(error.message)
       }).finally(()=>{
-          loadingInstance.close();
+        Spin.hide();
       })
   })
 }

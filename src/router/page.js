@@ -60,6 +60,22 @@ let pageroutes = [
     component: () => import('../posts/2020-12-07-SLEF.md')
   },
   {
+    path: "/LIFE/2021-01-21-IMG",
+    component: () => import('../posts/2021-01-21-IMG.md')
+  },
+  {
+    path: "/post/2021-01-21-IMG",
+    component: () => import('../posts/2021-01-21-IMG.md')
+  },
+  {
+    path: "/Img/2021-01-21-IMG",
+    component: () => import('../posts/2021-01-21-IMG.md')
+  },
+  {
+    path: "/api/2021-01-21-IMG",
+    component: () => import('../posts/2021-01-21-IMG.md')
+  },
+  {
     path: "/LIFE/2020-12-07-SLEF",
     component: () => import('../posts/2020-12-07-SLEF.md')
   },
