@@ -65,8 +65,7 @@ export default {
       }
     },
     handleRouter: function(dir, categorie = "") {
-      debugger
-      if(this.$route.path != dir){
+      if(this.$route.path.slice(1) != dir){
         this.activeMenu = dir;
         let path;
         if (categorie) {

@@ -52,11 +52,30 @@ body {
 pre {
   padding: 1.2em !important;
   border-radius: 5px;
+  /* 设置滚动条的样式 */
+  &::-webkit-scrollbar {
+    width:12px;
+    height: 8px;
+  }
+  /* 滚动槽 */
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+    border-radius:7px;
+  }
+  /* 滚动条滑块 */
+  &::-webkit-scrollbar-thumb {
+    border-radius:7px;
+    background:rgba(0,0,0,0.1);
+    -webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+  }
+  &::-webkit-scrollbar-thumb {
+    background:#6c757d;
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace !important;
+  monospace !important;
   line-height: 1.4;
   // color: #ff4081;
   // line-height: 1;

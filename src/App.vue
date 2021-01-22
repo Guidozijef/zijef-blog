@@ -128,10 +128,7 @@ export default {
   background-size: contain; */
   background: #f6f6f6;
 }
-.home-contanier{
-  width: 1290px;
-  margin: 60px auto 0px;
-}
+
 .avatar {
   height: 3rem;
   width: 3rem;

@@ -122,6 +122,8 @@ export default {
 }
 .home_post_list {
   display: flex;
+  width: 1290px;
+  margin: 60px auto 0px;
   flex-direction: column;
   margin-bottom: 5rem;
 }

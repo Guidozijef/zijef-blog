@@ -177,20 +177,20 @@ export default {
   color: #42b983;
 }
 .post-wrap {
+  width: 960px;
   display: flex;
-  margin: 6rem 6rem 0px 6rem;
+  margin: 6rem auto 6rem;
   border-radius: 2px;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  // justify-content: center;
   .post-content {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 760px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     // max-width: 1000px;
     background: #fff;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 50px;
+    padding: 35px;
     border-radius: 10px;
   }
 }
