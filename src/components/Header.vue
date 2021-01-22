@@ -1,5 +1,5 @@
 <template>
-  <div :class="menuFixed ? 'boxShadow header-container' : 'header-container'">
+  <div :class="menuFixed ? 'boxShadow header-container' : ($route.path == '/home' ? 'header-container fixed-header' : 'sticky-fixed')">
    <div class="header">
       <!-- <img src="../assets/img/title.png" alt=""> -->
       <div class="menu_bar">
@@ -83,9 +83,11 @@ export default {
 
 <style lang="scss" scoped>
 .header-container{
-  background: #fff;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  // position: -webkit-sticky;
+  // position: sticky;
+  transition: all 0.3s ease;
+  width: 100%;
   z-index: 9;
   top: 0;
   .header {
@@ -97,7 +99,33 @@ export default {
   }
 }
 
+.fixed-header{
+  color: #fff;
+  background-color: rgba(0,0,0,0);
+  font-size: 22px;
+  .header{
+    width: 1500px;
+    font-weight: 300;
+  }
+}
+
+.sticky-fixed{
+  background: #fff;
+  position: sticky;
+  top: 0;
+  font-size: 18px;
+  .header {
+    margin: 0 auto;
+    width: 1290px;
+    height: 60px;
+    line-height: 60px;
+    font-weight: 700;
+  }
+}
+
 .boxShadow{
+  font-size: 18px;
+  background: #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -110,7 +138,7 @@ img{
   justify-content: flex-end;
   align-items: center;
   .menu_tags{
-    font-size: 1rem;
+    // font-size: 1rem;
     margin: 0 20px;
     height: 60px;
     display: inline-block;

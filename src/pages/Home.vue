@@ -1,6 +1,11 @@
 <template>
+<div class="index-home">
+  <div class="section-wrap">
+    <div class="down"></div>
+  </div>
   <div class="home_post_list">
     <section class="home-post-section home-section">
+      
       <div class="home-container">
         <PageList/>
         <div style="width:27%;background:red"></div>
@@ -75,6 +80,8 @@
       </div>
     </section>
   </div>
+</div>
+  
 </template>
 
 <script>
@@ -109,12 +116,22 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .container {
   max-width: 800px;
   width: 800px;
   margin: 0 auto;
   position: relative;
+}
+.section-wrap{
+  background-image: url("../assets/hero.jpg");
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  .down{
+    
+  }
 }
 .home-container{
   display: flex;
