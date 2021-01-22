@@ -2,7 +2,9 @@
   <div id="app">
     <Header />
     <div class="home-contanier">
-      <router-view class="router-view" />
+      <keep-alive>
+        <router-view class="router-view" />
+      </keep-alive>
     </div>
     <div :class="showCommonFooter ? 'common-footer slide-top':'common-footer hidden'">
       <div class="footer-content">
@@ -116,11 +118,12 @@ export default {
 
 <style scoped lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font: normal 1em Roboto, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #212121;
   /* background: url('./assets/cover.jpg') top no-repeat;
   background-size: contain; */
   background: #f6f6f6;

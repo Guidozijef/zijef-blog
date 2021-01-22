@@ -2,12 +2,12 @@
   <div class="page-container">
     <div class="page-list">
       <div class="page" :class="`row-${post.size}`" v-for="(post,index) in allPosts" :key="index">
-        <ul class="tag-list" v-for="tag in post.tags" :key="tag">
-          <li class="tag">{{tag}}</li>
+        <ul class="tag-list">
+          <li class="tag" v-for="tag in post.tags" :key="tag">{{tag}}</li>
         </ul>
         <h3 class="title" @click="handlePostLink(index)">{{post.title}}</h3>
 
-        <div class="img" v-if="imgData.length" @click="handlePostLink(index)">
+        <div class="img" v-if="imgData.length">
           <img
             class="img-responsive"
             :src="imgData[index].url"

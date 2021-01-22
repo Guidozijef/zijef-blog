@@ -181,14 +181,15 @@ export default {
   margin: 6rem 6rem 0px 6rem;
   border-radius: 2px;
   justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   .post-content {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    max-width: 1000px;
-    background: #ffffff94;
-    padding-left: 150px;
-    padding-right: 150px;
+    // max-width: 1000px;
+    background: #fff;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-top: 50px;
     border-radius: 10px;
   }

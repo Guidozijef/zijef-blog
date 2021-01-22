@@ -65,14 +65,18 @@ export default {
       }
     },
     handleRouter: function(dir, categorie = "") {
-      this.activeMenu = dir;
-      let path;
-      if (categorie) {
-        path = `/${dir}?${dir}=${categorie}`;
-      } else {
-        path = `/${dir}`;
+      debugger
+      if(this.$route.path != dir){
+        this.activeMenu = dir;
+        let path;
+        if (categorie) {
+          path = `/${dir}?${dir}=${categorie}`;
+        } else {
+          path = `/${dir}`;
+        }
+        this.$router.push(path);
       }
-      this.$router.push(path);
+      
     },
   },
 }

@@ -11,7 +11,7 @@ const containers = require('./containers')
 const md = require('markdown-it')({
   html: true, //可以识别html
   linkify: true,//自动检测像链接的文本
-  breaks: false,//回车换行
+  breaks: true,//回车换行
   typographer: true,//优化排版，标点
   //代码高亮
   highlight: function (str, lang) {
