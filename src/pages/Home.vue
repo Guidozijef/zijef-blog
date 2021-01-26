@@ -1,11 +1,17 @@
 <template>
 <div class="index-home">
-  <div class="section-wrap">
-    <div class="down"></div>
+  <div class="section-wrap" :style="!dayInfo.picture4 ? {'backgroundImage':`url(${dayInfo.picture4})`} : null">
+    <div class="textInfo-contanier">
+      <div class="zh-text">{{dayInfo.content}}</div>
+      <span class="en-text">{{dayInfo.note}}</span>
+    </div>
+    <div class="down">
+      <Icon type="ios-arrow-dropdown" @click="down" custom="i-con" size="100" />
+    </div>
+
   </div>
   <div class="home_post_list">
     <section class="home-post-section home-section">
-      
       <div class="home-container">
         <PageList/>
         <div style="width:27%;background:red"></div>
@@ -88,6 +94,7 @@
 import { postData } from "../utils/data.js";
 import { getAllCategories } from "../utils/datafilter.js";
 import { photoData } from "../utils/photoData";
+import http from '../server/req.js'
 export default {
   // 主页
   name: "Home",
@@ -95,8 +102,14 @@ export default {
     return {
       allPosts: JSON.parse(postData),
       categories: getAllCategories(JSON.parse(postData)),
-      photoLatest: photoData
+      photoLatest: photoData,
+      dayInfo:{}
     };
+  },
+  created() {
+    http.post(`/api/ciba/dsapi/?date=${this.$moment().format('yyyy-MM-DD')}`).then(res => {
+      this.dayInfo = res;
+    })
   },
   components: {
     PostList: () => import("../components/PostList"),
@@ -111,12 +124,37 @@ export default {
         path = `/${dir}`;
       }
       this.$router.push(path);
+    },
+    down(){
+      // window.scrollTo({
+      //   top: 100, // 滚动终点y的位置
+      //   left: 100, // 滚动终点x的位置
+      //   behavior: 'smooth' //平滑滚动
+      // });
+      let height = document.querySelector(".section-wrap").offsetHeight - 60 // 减去header高度
+      let cb = () => {
+        if(height == document.documentElement.scrollTop || height < document.documentElement.scrollTop){
+          document.documentElement.scrollTop = height
+          return false;
+        }else{
+          document.documentElement.scrollTop += 50
+          requestAnimationFrame(cb)
+        }
+      }
+      requestAnimationFrame(cb)
     }
   }
 };
 </script>
 
 <style scoped lang="scss">
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/Playfair/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKfsunDXbtU.woff") format('woff')
+}
 .container {
   max-width: 800px;
   width: 800px;
@@ -127,12 +165,45 @@ export default {
   background-image: url("../assets/hero.jpg");
   background-position: top left;
   background-repeat: no-repeat;
+  // opacity: 0.5;
   background-size: cover;
   height: 100vh;
+  position: relative;
+  .textInfo-contanier{
+    position: absolute;
+    bottom: 250px;
+    left: 300px;
+    color: #fff;
+    text-align: left;
+    .zh-text{
+      font-family: Playfair Display,Sans-Serif;
+      font-size: 70px;
+      width: 50%;
+    }
+    .en-text{
+      font-size: 1.2rem;
+      margin-top: 15px;
+      display: inline-block;
+      line-height: 1.5rem;
+      width: 50%;
+    }
+  }
   .down{
-    
+    justify-content: center;
+    align-items: flex-end;
+    display: flex;
+    height: 100vh;
+    .i-con{
+      color: #f6f6f6;
+      margin-bottom:50px;
+      cursor: pointer;
+      &:hover{
+        color: #fff;
+      }
+    }
   }
 }
+
 .home-container{
   display: flex;
   justify-content: space-between;

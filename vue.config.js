@@ -47,6 +47,13 @@ module.exports = {
             '^/api/wallpaper': '/'
         }
       },
+      '/api/ciba/': {
+        target: 'http://open.iciba.com',
+        changeOrigin: true,
+        pathRewrite: {
+            '^/api/ciba': '/'
+        }
+      },
     },
   },
 

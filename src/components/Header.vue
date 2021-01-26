@@ -86,7 +86,7 @@ export default {
   position: fixed;
   // position: -webkit-sticky;
   // position: sticky;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   width: 100%;
   z-index: 9;
   top: 0;
@@ -104,7 +104,7 @@ export default {
   background-color: rgba(0,0,0,0);
   font-size: 22px;
   .header{
-    width: 1500px;
+    width: 90%;
     font-weight: 300;
   }
 }
