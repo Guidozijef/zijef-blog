@@ -13,6 +13,9 @@ import moment from 'moment';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 
+import $ from 'jquery'
+Vue.prototype.$ = $
+
 Vue.prototype.$moment = moment;
 Vue.use(iView);
 // 全局注册（在 `main .js` 文件中）

@@ -24,9 +24,11 @@
   </div>
 </template>
 
+
 <script>
 import { postData } from "../utils/data.js";
 import http from '../server/req.js'
+import {requestGet} from '../server/reqJsonP.js'
 export default {
   name:'pageList',
   porps:{
@@ -55,7 +57,7 @@ export default {
           result[i+1] ? result[i+1].size = '2' : null;
         }
       }
-      console.log(result)
+      // console.log('所有文章集合',result)
       return result;
     },
   },
@@ -71,6 +73,39 @@ export default {
       this.$router.push(`/${dir}/${postName}`);
     },
     getImgUrl(index){
+      // this.$.ajax({
+      //   type: "GET",
+      //   url: "http://wallpaper.apc.360.cn/index.php",
+      //   data: `c=WallPaper&a=getAppsByOrder&order=create_time&start=0&count=${index}&from=360chrome`,
+      //   async: true,
+      //   dataType : "jsonp",
+      //   beforeSend: function(xhr) {
+      //     xhr.setRequestHeader("Referer", "http://wallpaper.apc.360.cn");
+      //   },
+      //   success: function(jsonData){
+      //     console.log(jsonData)
+      //   }
+      // })
+
+      // function addScriptTag(src) {
+      //   var script = document.createElement('script');
+      //   script.setAttribute("type","text/javascript");
+      //   script.src = src;
+      //   document.body.appendChild(script);
+      // }
+
+      // window.onload = function () {
+      //   addScriptTag('http://wallpaper.apc.360.cn/index.php?c=WallPaper&a=getAppsByOrder&order=create_time&start=0&count=7&from=360chrome');
+      // }
+
+      // function foo(data) {
+      //   console.log('response data: ' + JSON.stringify(data));
+      // }; 
+      // requestGet(`http://wallpaper.apc.360.cn/index.php?c=WallPaper&a=getAppsByOrder&order=create_time&start=0&count=${index}&from=360chrome`,{}).then(res => {
+      //   if(res.errno == '0'){
+      //     this.imgData = res.data
+      //   }
+      // })
       http.get(`/api/wallpaper/index.php?c=WallPaper&a=getAppsByOrder&order=create_time&start=0&count=${index}&from=360chrome`).then(res => {
         console.log(res)
         if(res.errno == '0'){

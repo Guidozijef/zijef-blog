@@ -107,9 +107,21 @@ export default {
     };
   },
   created() {
-    http.post(`/api/ciba/dsapi/?date=${this.$moment().format('yyyy-MM-DD')}`).then(res => {
-      this.dayInfo = res;
+    let self = this;
+    this.$.ajax({
+      type: 'get',
+      url: 'http://open.iciba.com/dsapi/?date=2021-02-03',
+      data: {},
+      async: true,
+      dataType: 'jsonp',
+      jsonpCallback: 'info',
+      success: function info(res) {
+        self.dayInfo = res;
+      }
     })
+    // http.post(`/api/ciba/dsapi/?date=${this.$moment().format('yyyy-MM-DD')}`).then(res => {
+    //   this.dayInfo = res;
+    // })
   },
   components: {
     PostList: () => import("../components/PostList"),

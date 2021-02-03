@@ -88,7 +88,14 @@ module.exports = {
           loader: require.resolve('./build/markdown')
         }
       ]
-    })
+    }),
+    config.plugins.push(
+      new webpack.ProvidePlugin({
+        $:"jquery",
+        jQuery:"jquery",
+        "windows.jQuery":"jquery"
+      })
+    )
   }
 
 }

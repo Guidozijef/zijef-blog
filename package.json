@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "jquery": "^3.5.1",
     "vue": "^2.6.11",
     "vue-router": "^3.4.9"
   },
@@ -51,7 +52,8 @@
     },
     "rules": {
       "no-debugger": 0,
-      "no-console": "off"
+      "no-console": "off",
+      "no-unused-vars": "off"
     }
   },
   "browserslist": [
