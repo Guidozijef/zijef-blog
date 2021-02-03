@@ -1,6 +1,6 @@
 <template>
 <div class="index-home">
-  <div class="section-wrap" :style="!dayInfo.picture4 ? {'backgroundImage':`url(${dayInfo.picture4})`} : null">
+  <div class="section-wrap" :style="!dayInfo.picture3 ? {'backgroundImage':`url(${dayInfo.picture3})`} : null">
     <div class="textInfo-contanier">
       <div class="zh-text">{{dayInfo.content}}</div>
       <span class="en-text">{{dayInfo.note}}</span>
@@ -110,7 +110,7 @@ export default {
     let self = this;
     this.$.ajax({
       type: 'get',
-      url: `https://sentence.iciba.com/index.php?c=dailysentence&m=getdetail&title=${this.$moment().format('yyyy-MM-DD')}`,
+      url: `https://sentence.iciba.com/index.php?c=dailysentence&m=getdetail&title=${self.$moment().format('yyyy-MM-DD')}`,
       data: {},
       async: true,
       dataType: 'jsonp',
