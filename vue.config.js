@@ -33,6 +33,7 @@ module.exports = {
   // lintOnSave: false,
   // productionSourceMap: false,
   devServer: {
+    outputDir:'docs',
     historyApiFallback: true,
     https: false,
     hot: true,
