@@ -110,7 +110,7 @@ export default {
     let self = this;
     this.$.ajax({
       type: 'get',
-      url: 'http://open.iciba.com/dsapi/?date=2021-02-03',
+      url: `https://sentence.iciba.com/index.php?c=dailysentence&m=getdetail&title=${this.$moment().format('yyyy-MM-DD')}`,
       data: {},
       async: true,
       dataType: 'jsonp',
