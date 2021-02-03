@@ -32,6 +32,7 @@ module.exports = {
   // assetsDir: 'static-new',
   // lintOnSave: false,
   // productionSourceMap: false,
+  publicPath: process.env.NODE_ENV === "production" ? "/resume-vue" : "/",
   outputDir:'docs',
   devServer: {
     historyApiFallback: true,
