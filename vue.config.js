@@ -32,8 +32,8 @@ module.exports = {
   // assetsDir: 'static-new',
   // lintOnSave: false,
   // productionSourceMap: false,
+  outputDir:'docs',
   devServer: {
-    outputDir:'docs',
     historyApiFallback: true,
     https: false,
     hot: true,
