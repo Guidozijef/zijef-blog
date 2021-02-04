@@ -11,7 +11,7 @@
           <img
             class="img-responsive"
             :src="imgData[index].url"
-            :alt="imgData[index].utag"
+            :alt="imgData[index].copyright"
           >
         </div>
         <div class="info">
@@ -73,16 +73,26 @@ export default {
       this.$router.push(`/${dir}/${postName}`);
     },
     getImgUrl(index){
+      let self = this;
+      let baseUrl = 'https://cn.bing.com/'
+      this.$.ajax({
+        type: "GET",
+        url: "https://bing.getlove.cn/latelyBingImageStory",
+        async: true,
+        dataType : "json",
+        success: function(jsonData){
+          jsonData.forEach(item => {
+            item.url = baseUrl + item.url
+          })
+          self.imgData = jsonData
+        }
+      })
       // this.$.ajax({
       //   type: "GET",
-      //   url: "http://wallpaper.apc.360.cn/index.php",
-      //   data: `c=WallPaper&a=getAppsByOrder&order=create_time&start=0&count=${index}&from=360chrome`,
+      //   url: `https://json2jsonp.com/?url=http://xiayicangliang.top/bz/api.php?cid=360new&start=0&count=30&callback=cbfunc`,
       //   async: true,
       //   dataType : "jsonp",
-      //   beforeSend: function(xhr) {
-      //     xhr.setRequestHeader("Referer", "http://wallpaper.apc.360.cn");
-      //   },
-      //   success: function(jsonData){
+      //   success: function cbfunc(jsonData){
       //     console.log(jsonData)
       //   }
       // })
@@ -106,11 +116,11 @@ export default {
       //     this.imgData = res.data
       //   }
       // })
-      http.get(`/api/wallpaper/index.php?c=WallPaper&a=getAppsByOrder&order=create_time&start=0&count=${index}&from=360chrome`).then(res => {
-        console.log(res)
-        if(res.errno == '0'){
-          this.imgData = res.data
-        }
+      // http.get(`/api/wallpaper/index.php?c=WallPaper&a=getAppsByOrder&order=create_time&start=0&count=${index}&from=360chrome`).then(res => {
+      //   console.log(res)
+      //   if(res.errno == '0'){
+      //     this.imgData = res.data
+      //   }
         /***
             "id":"2008033",
             "class_id":"15",
@@ -133,7 +143,7 @@ export default {
             "utag":"动感水果 车厘子",
             "tempdata":"",
              */
-      })
+      // })
     }
   }
 
