@@ -179,10 +179,12 @@ export default {
 .post-wrap {
   width: 960px;
   display: flex;
-  margin: 6rem auto 6rem;
+  margin: 0 auto 6rem;
   border-radius: 2px;
+  position: relative;
   // justify-content: center;
   .post-content {
+    margin-top: 6rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 760px;
     display: flex;
@@ -192,6 +194,17 @@ export default {
     background: #fff;
     padding: 35px;
     border-radius: 10px;
+    // 目录容器类
+    /deep/ .table-of-contents{
+      position: absolute;
+      // top: 0;
+      left: 790px;
+      padding: 20px;
+      li{
+        line-height: 2;
+      }
+      // background: red;
+    }
   }
 }
 .comments {

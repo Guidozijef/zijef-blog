@@ -87,6 +87,16 @@ code {
   // word-wrap: break-word;
 }
 
+
+.content .custom-block::before{
+  top:calc(50% - 15px)
+}
+.content .custom-block.tip {
+  background-color: #55b33740;
+  border-color: #42b983;
+
+}
+
 strong{
   font-weight: 600;
   color: #3f51b5;
@@ -198,6 +208,13 @@ table {
     display: none;
   }
 }
+
+.table-of-contents{
+  li:nth-child(1) {
+    display: none;
+  }
+}
+
 .content {
   img {
     width: 100%;
@@ -231,7 +248,6 @@ table {
     color: #3f51b5;
     margin: 0.65em 0;
     padding: 20px 0;
-    line-height: 1.5;
     &:hover .header-anchor {
       opacity: 1;
       color: #fff;

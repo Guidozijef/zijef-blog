@@ -76,6 +76,18 @@ let pageroutes = [
     component: () => import('../posts/2021-01-21-IMG.md')
   },
   {
+    path: "/TEST/2021-02-05-TEST",
+    component: () => import('../posts/2021-02-05-TEST.md')
+  },
+  {
+    path: "/post/2021-02-05-TEST",
+    component: () => import('../posts/2021-02-05-TEST.md')
+  },
+  {
+    path: "/Markdown/2021-02-05-TEST",
+    component: () => import('../posts/2021-02-05-TEST.md')
+  },
+  {
     path: "/LIFE/2020-12-07-SLEF",
     component: () => import('../posts/2020-12-07-SLEF.md')
   },
