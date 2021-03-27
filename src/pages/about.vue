@@ -6,6 +6,7 @@
       height="100"
       viewBox="0 0 365 365"
     >
+    
       <g id="H-letter">
         <line
           class="H-left-stroke"
