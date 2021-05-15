@@ -14,9 +14,11 @@
     <section class="home-post-section home-section">
       <div class="home-container">
         <PageList/>
-        <div style="width:27%;background:red"></div>
+        <div style="width:27%;">
+          <Introduction></Introduction>
+        </div>
       </div>
-      <div class="post-list-wrapper home-section-wrapper">
+      <!-- <div class="post-list-wrapper home-section-wrapper">
         <PostList
           class="row1"
           rowsNumber="1"
@@ -32,7 +34,7 @@
           rowsNumber="3"
           maxNumber="5"
         />
-      </div>
+      </div> -->
       <div class="more-posts">
         <span @click="handleRouter('all')">View All</span>
       </div>
@@ -124,8 +126,9 @@ export default {
     // })
   },
   components: {
-    PostList: () => import("../components/PostList"),
-    PageList: () => import("../components/PageList")
+    // PostList: () => import("../components/PostList"),
+    PageList: () => import("../components/PageList"),
+    Introduction: () => import("../components/Introduction")
   },
   methods: {
     handleRouter: function(dir, categorie = "") {
